@@ -1,7 +1,7 @@
 ;; TODO: link commits from vc-log to magit-show-commit
 ;; TODO: smerge-mode
 (require-package 'magit)
-(require-package 'git-blame)
+;;(require-package 'git-blame)
 (require-package 'git-commit-mode)
 (require-package 'git-rebase-mode)
 (require-package 'gitignore-mode)
@@ -22,7 +22,7 @@
 (after-load 'magit
   (define-key magit-status-mode-map (kbd "C-M-<up>") 'magit-goto-parent-section))
 
-(require-package 'fullframe)
+(require 'fullframe)
 (after-load 'magit
   (fullframe magit-status magit-mode-quit-window))
 

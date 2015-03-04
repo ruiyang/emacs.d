@@ -1,4 +1,4 @@
-(require-package 'sql-indent)
+(require 'sql-indent)
 (after-load 'sql
   (require 'sql-indent))
 

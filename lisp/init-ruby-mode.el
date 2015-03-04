@@ -48,7 +48,7 @@
 
 
 ;;; Robe
-(require-package 'robe)
+;; (require-package 'robe)
 (after-load 'ruby-mode
   (add-hook 'ruby-mode-hook 'robe-mode))
 
@@ -66,8 +66,8 @@
 
 
 ;;; ri support
-(require-package 'yari)
-(defalias 'ri 'yari)
+;; (require-package 'yari)
+;; (defalias 'ri 'yari)
 
 
 

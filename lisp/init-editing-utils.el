@@ -89,7 +89,7 @@
 (diminish 'undo-tree-mode)
 
 
-(require-package 'highlight-symbol)
+(require 'highlight-symbol)
 (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
   (add-hook hook 'highlight-symbol-mode)
   (add-hook hook 'highlight-symbol-nav-mode))
@@ -344,7 +344,7 @@ With arg N, insert N newlines."
 
 
 
-(require-package 'highlight-escape-sequences)
+(require 'highlight-escape-sequences)
 (hes-mode)
 
 

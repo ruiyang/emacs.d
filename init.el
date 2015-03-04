@@ -21,6 +21,18 @@
 (require 'init-utils)
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 (require 'init-elpa)      ;; Machinery for installing required packages
+
+;;----------------------------------------------------------------------------
+;; add my customized stuff to load path
+;;----------------------------------------------------------------------------
+(add-to-list 'load-path (expand-file-name "ryang" user-emacs-directory))
+
+(sanityinc/add-subdirs-to-load-path
+ (expand-file-name "ryang/" user-emacs-directory))
+
+(sanityinc/add-subdirs-to-load-path
+ (expand-file-name "github/" user-emacs-directory))
+
 (require 'init-exec-path) ;; Set up $PATH
 
 ;;----------------------------------------------------------------------------
@@ -32,11 +44,11 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
-(require-package 'wgrep)
-(require-package 'project-local-variables)
+;; (require-package 'wgrep)
+;; (require-package 'project-local-variables)
 (require-package 'diminish)
-(require-package 'scratch)
-(require-package 'mwe-log-commands)
+;; (require-package 'scratch)
+;; (require-package 'mwe-log-commands)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
@@ -55,8 +67,8 @@
 (require 'init-ido)
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
-(require 'init-windows)
-(require 'init-sessions)
+;; (require 'init-windows)
+;; (require 'init-sessions)
 (require 'init-fonts)
 (require 'init-mmm)
 
@@ -65,25 +77,25 @@
 (require 'init-vc)
 (require 'init-darcs)
 (require 'init-git)
-(require 'init-github)
+;;(require 'init-github)
 
 (require 'init-compile)
-(require 'init-crontab)
-(require 'init-textile)
+;; (require 'init-crontab)
+;; (require 'init-textile)
 (require 'init-markdown)
 (require 'init-csv)
-(require 'init-erlang)
+;; (require 'init-erlang)
 (require 'init-javascript)
-(require 'init-php)
+;; (require 'init-php)
 (require 'init-org)
 (require 'init-nxml)
 (require 'init-html)
 (require 'init-css)
 (require 'init-haml)
 (require 'init-python-mode)
-(require 'init-haskell)
+;; (require 'init-haskell)
 (require 'init-ruby-mode)
-(require 'init-rails)
+;; (require 'init-rails)
 (require 'init-sql)
 
 (require 'init-paredit)
@@ -105,11 +117,12 @@
 
 (require-package 'gnuplot)
 (require-package 'lua-mode)
-(require-package 'htmlize)
-(require-package 'dsvn)
+;; (require-package 'htmlize)
+;; (require-package 'dsvn)
 (when *is-a-mac*
   (require-package 'osx-location))
-(require-package 'regex-tool)
+
+;;(require-package 'regex-tool)
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
@@ -134,7 +147,6 @@
   (error "Please move init-local.el to ~/.emacs.d/lisp"))
 (require 'init-local nil t)
 
-
 ;;----------------------------------------------------------------------------
 ;; Locales (setting them earlier in this file doesn't work in X)
 ;;----------------------------------------------------------------------------
@@ -144,7 +156,6 @@
           (lambda ()
             (message "init completed in %.2fms"
                      (sanityinc/time-subtract-millis after-init-time before-init-time))))
-
 
 (provide 'init)
 

@@ -18,15 +18,15 @@
 
 ;; We include the org repository for completeness, but don't normally
 ;; use it.
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(set 'package-archives '())
+
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
 
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-
-;;; Also use Melpa for most packages
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-
 
 
 ;; If gpg cannot be found, signature checking will fail, so we
@@ -76,8 +76,8 @@ locate PACKAGE."
 
 
 
-(require-package 'fullframe)
-(fullframe list-packages quit-window)
+;;(require-package 'fullframe)
+;;(fullframe list-packages quit-window)
 
 
 (require-package 'cl-lib)

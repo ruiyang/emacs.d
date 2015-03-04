@@ -2,8 +2,8 @@
 ;; See also init-clojure-cider.el
 
 (require-package 'clojure-mode)
-(require-package 'cljsbuild-mode)
-(require-package 'elein)
+;; (require-package 'cljsbuild-mode)
+;; (require-package 'elein)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Slime with Clojure

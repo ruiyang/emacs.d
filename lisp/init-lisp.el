@@ -2,8 +2,6 @@
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
   (add-hook hook 'elisp-slime-nav-mode))
 
-(require-package 'lively)
-
 (setq-default initial-scratch-message
               (concat ";; Happy hacking " (or user-login-name "") " - Emacs ♥ you!\n\n"))
 
@@ -23,7 +21,7 @@
 (after-load 'lisp-mode
   (define-key emacs-lisp-mode-map (kbd "C-x C-e") 'sanityinc/eval-last-sexp-or-region))
 
-(require-package 'ipretty)
+(require 'ipretty)
 (ipretty-mode 1)
 
 
@@ -144,7 +142,8 @@
 ;; Enable desired features for all lisp modes
 ;; ----------------------------------------------------------------------------
 (require-package 'rainbow-delimiters)
-(require-package 'redshank)
+;; (require-package 'redshank)
+(require 'redshank)
 (after-load 'redshank
   (diminish 'redshank-mode))
 
