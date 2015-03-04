@@ -1,0 +1,138 @@
+# [[http://www.commandlinefu.com] [commandlinefu]]
+
+* cat /etc/passwd
+list all users/check home directory
+
+* uname -a
+check ubuntu version
+
+* df -h # check disk usage
+* du -sh /home/  # check usage under /home
+* lsof -w -n -i tcp:8080  # find process using a port
+* gem list | cut -d" " -f1 | xargs gem uninstall -aIx   # remove all gems
+* sudo su -  # switch to root
+* netstat -a # check network port listening etc.
+* bash scripting
+** assign command output to a variable
+VARNAME=$(ps aux | grep [X]vfb)
+Note: no space on both side of '='
+** if else fi
+if [ "$(expr substr $(uname -s) 1 9)" == "CYGWIN_NT" ]; then
+    cmd /c go_ci.bat "$@"
+else
+    bash ./ci_linux.sh "$@"
+fi
+** change default prompt
+\a : an ASCII bell character (07)
+\d : the date in "Weekday Month Date" format (e.g., "Tue May 26")
+\D{format} :	the format is passed to strftime(3) and the result is inserted into the prompt string; an empty format results in a locale-specific time representation. The braces are required
+\e : an ASCII escape character (033)
+\h : the hostname up to the first '.'
+\H : the hostname
+\j : the number of jobs currently managed by the shell
+\l : the basename of the shell’s terminal device name
+\n : newline
+\r : carriage return
+\s : the name of the shell, the basename of $0 (the portion following the final slash)
+\t : the current time in 24-hour HH:MM:SS format
+\T : the current time in 12-hour HH:MM:SS format
+\@ : the current time in 12-hour am/pm format
+\A : the current time in 24-hour HH:MM format
+\u : the username of the current user
+\v : the version of bash (e.g., 2.00)
+\V : the release of bash, version + patch level (e.g., 2.00.0)
+\w : the current working directory, with $HOME abbreviated with a tilde
+\W : the basename of the current working directory, with $HOME abbreviated with a tilde
+\! : the history number of this command
+\# : the command number of this command
+\$ : if the effective UID is 0, a #, otherwise a $
+\nnn : the character corresponding to the octal number nnn
+\\ : a backslash
+\[ : begin a sequence of non-printing characters, which could be used to embed a terminal control sequence into the prompt
+\] : end a sequence of non-printing characters
+
+# If id command returns zero, you’ve root access.
+if [ $(id -u) -eq 0 ];
+then # you are root, set red colour prompt
+  PS1="\\[$(tput setaf 1)\\]\\w #\\[$(tput sgr0)\\]"
+else # normal
+  PS1="\\w$ "
+fi
+
+* !$ reuse last command's parameter
+* uninstall all gems
+gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
+* show a file
+  - tail -f /file/  live updating of a file
+* sed
+** delete a line
+   - by line number
+     sed -i 8d ~/.ssh/known_hosts
+
+
+
+* packages
+  - dpkg --get-selections | grep -v deinstall
+  - sudo dpkg --configure -a  # fix issues of missing file in apt-get install. normally this means the dpkg is corrupted
+
+* postgres
+** create custom users
+   - su - postgres  // switch to default admin user
+   - createuser -s -P // <username> create a super user with password prompt
+   - dropuser // to delete a role
+** create database
+   - createdb clojure
+   - psql -d clojure
+   - grant all privileges on database clojure to clojure_user
+   - modify pg_hba.conf to use md5 password authentication for localhost
+** userful psql command
+   - sudo su - postgres //switch to postgres super user
+   - psql -d <database> //connect to the database as postgres
+** restart
+   sudo /etc/init.d/postgresql restart
+** psql to start command prompt
+** roles
+SELECT rolname FROM pg_roles;
+\du to list all roles
+
+* Date And Time
+  - /etc/timezone for timezone info
+  - date to display date and time
+  - dpkg-reconfigure --frontend noninteractive tzdata
+
+* dpkg-query -L libapache2-mod-jk
+* grep
+  - grep -F /str/    grep plain string
+  - grep -E grep extended regular expression
+
+* grunt
+** grunt warning:watch ENOSPC
+fix: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+* [[http://www.gnu.org/software/bash/manual/bash.html#Bash-Conditional-Expressions][Bash Reference Manual]]
+* environment variable
+  - unset <env>
+* php
+  - php --ini show loaded config
+  - restart webserver after restart
+* mysql
+  - mysql -h localhost -u wordpress -p
+** remove mysql ubuntu
+sudo apt-get remove --purge mysql-server mysql-client mysql-common
+sudo apt-get autoremove
+sudo apt-get autoclean
+----
+sudo apt-get remove --purge mysql-server mysql-client mysql-common
+sudo deluser mysql
+sudo rm -rf /var/lib/mysql
+sudo apt-get purge mysql-server-core-5.5
+sudo apt-get purge mysql-client-core-5.5
+** create user
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'monty'@'localhost'
+    ->     IDENTIFIED BY 'some_pass' WITH GRANT OPTION;
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'monty'@'%'
+    ->     IDENTIFIED BY 'some_pass' WITH GRANT OPTION;
+mysql> GRANT RELOAD,PROCESS ON *.* TO 'admin'@'localhost';
+mysql> GRANT USAGE ON *.* TO 'dummy'@'localhost';
+
+** create database
+create database <db>
