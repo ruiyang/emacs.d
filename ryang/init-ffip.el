@@ -1,5 +1,4 @@
 ;; (require-package 'find-file-in-project)
-(require 'eproject)
 (require 'find-file-in-project)
 (require 's)
 
