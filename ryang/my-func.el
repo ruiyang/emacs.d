@@ -60,15 +60,15 @@ by using nxml's indentation rules."
 
 (defun vi ()
   (interactive)
-  (find-file "~/.emacs.d/users/help/vi.org"))
+  (find-file "~/.emacs.d/ryang/help/vi.org"))
 
 (defun shell-help ()
   (interactive)
-  (find-file "~/.emacs.d/users/help/shell.org"))
+  (find-file "~/.emacs.d/ryang/help/shell.org"))
 
 (defun org-help ()
   (interactive)
-  (find-file "~/.emacs.d/users/help/org.org"))
+  (find-file "~/.emacs.d/ryang/help/org.org"))
 
 (defun todo ()
   (interactive)
@@ -85,8 +85,8 @@ by using nxml's indentation rules."
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 
 (defun open-buffer-path ()
-   "Run explorer on the directory of the current buffer."
-   (interactive)
-   (shell-command (concat "nautilus " (buffer-file-name))))
+  "Run explorer on the directory of the current buffer."
+  (interactive)
+  (shell-command (concat "nautilus " (buffer-file-name))))
 
 (provide 'my-func)

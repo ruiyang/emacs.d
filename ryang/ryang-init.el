@@ -29,4 +29,5 @@
 ;; (require 'init-mozrepl)
 (require 'init-smartparens)
 
+(setenv "TMPDIR" "/tmp")
 (provide 'ryang-init)
