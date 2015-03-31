@@ -7,7 +7,9 @@ list all users/check home directory
 check ubuntu version
 
 * df -h # check disk usage
-* du -sh /home/  # check usage under /home
+* check disk usage under a folder
+  - du -sh /home/  # check usage under /home
+  - du -sh .[!.]* *  show disk usage under current folder with showing hidden folder and files
 * lsof -w -n -i tcp:8080  # find process using a port
 * gem list | cut -d" " -f1 | xargs gem uninstall -aIx   # remove all gems
 * sudo su -  # switch to root
