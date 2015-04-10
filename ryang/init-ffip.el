@@ -5,7 +5,7 @@
 ;; No need to be stingy
 (setq ffip-limit 8192)
 (setq ffip-full-paths t)
-(setq ffip-project-file ".emacs-project")
+(setq ffip-project-file '(".emacs-project" ".git"))
 
 (setq ffip-patterns
       '("*"))
