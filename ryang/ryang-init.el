@@ -28,6 +28,9 @@
 (require 'init-ido-vertical)
 ;; (require 'init-mozrepl)
 (require 'init-smartparens)
+(require 'clojure-quick-repls)
 
 (setenv "TMPDIR" "/tmp")
+(put 'erase-buffer 'disabled nil)
+
 (provide 'ryang-init)
