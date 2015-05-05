@@ -28,7 +28,8 @@
 (require 'init-ido-vertical)
 ;; (require 'init-mozrepl)
 (require 'init-smartparens)
-(require 'clojure-quick-repls)
+(require 'init-clojure-quick-repls)
+(require 'init-syntax-subword)
 
 (setenv "TMPDIR" "/tmp")
 (put 'erase-buffer 'disabled nil)
