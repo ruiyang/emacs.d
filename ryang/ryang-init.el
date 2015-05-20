@@ -30,7 +30,7 @@
 (require 'init-smartparens)
 (require 'init-clojure-quick-repls)
 (require 'init-syntax-subword)
-
+(require 'init-spell-check)
 (setenv "TMPDIR" "/tmp")
 (put 'erase-buffer 'disabled nil)
 
