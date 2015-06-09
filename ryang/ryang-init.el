@@ -31,6 +31,8 @@
 (require 'init-clojure-quick-repls)
 (require 'init-syntax-subword)
 (require 'init-spell-check)
+(require 'init-syntax-subword)
+
 (setenv "TMPDIR" "/tmp")
 (put 'erase-buffer 'disabled nil)
 
