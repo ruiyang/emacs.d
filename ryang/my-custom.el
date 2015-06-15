@@ -4,7 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(comint-highlight-prompt ((t (:inherit minibuffer-prompt :foreground "green"))))
- '(compilation-info ((t (:foreground "green" :underline nil :weight normal)))))
+ '(compilation-info ((t (:foreground "green" :underline nil :weight normal))))
+ '(web-mode-html-tag-face ((t (:foreground "#6c71c4")))))
 
 (custom-set-variables
  '(smooth-scroll-margin 3))

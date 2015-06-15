@@ -56,5 +56,5 @@
 (define-key sp-keymap (kbd "H-s j") 'sp-join-sexp)
 (define-key sp-keymap (kbd "H-s s") 'sp-split-sexp)
 
-
+(smartparens-global-mode 1)
 (provide 'init-smartparens)
