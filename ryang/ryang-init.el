@@ -12,7 +12,7 @@
 ;; (require 'solarized-theme)
 ;; (load-theme 'solarized-dark t)
 
-(set-face-attribute 'default nil :height 150)
+(set-face-attribute 'default nil :height 180)
 (color-theme-sanityinc-solarized-dark)
 
 (require 'my-func)
@@ -35,5 +35,11 @@
 (subword-mode t)
 (setenv "TMPDIR" "/tmp")
 (put 'erase-buffer 'disabled nil)
+
+(defadvice dired-create-directory (around inhibit-ido activate)
+  "Turn off Ido mode for the duration, then turn it on."
+  (unwind-protect
+       (progn (ido-everywhere -1) ad-do-it)
+    (ido-everywhere 1)))
 
 (provide 'ryang-init)
