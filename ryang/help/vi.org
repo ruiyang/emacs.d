@@ -178,18 +178,12 @@ Tchar	Searches backward in current line to character before char
 :g/str1/s/str2/str3/	Finds the line containing str1, replaces str2 with str3
 :v/str/cmd	Executes cmd on all lines that do not match str
 ,	Repeats, in reverse direction, last / or ? search command
-
-
-
 * Replace
 The search and replace function is accomplished with the :s command. It is commonly used in combination with ranges or the :g command (below).
 :s/pattern/string/flags	Replace pattern with string according to flags.
 g	Flag - Replace all occurences of pattern
 c	Flag - Confirm replaces.
 &	Repeat last :s command
-
-
-
 * Regular Expressions
 . (dot)	Any single character except newline
 *	zero or more occurances of any character
@@ -231,7 +225,6 @@ Note the use of ( ) with the pipe symbol to specify the 'or' condition
 Notes:
 1. Regular expressions are case sensitive
 2. Regular expressions are to be used where pattern is specified
-
 
 * Counts
 Nearly every command may be preceded by a number that specifies how many times it is to be performed. For example, 5dw will delete 5 words and 3fe will move the cursor forward to the 3rd occurence of the letter e. Even insertions may be repeated conveniently with this method, say to insert the same line 100 times.
@@ -311,3 +304,13 @@ Set	Default	Description
 :set wm=n	wm = 0	Sets automatic wraparound n spaces from right margin.
 :set ws	ws	Sets automatic wraparound n spaces from right margin.
 * Undo  u
+* Survive list
+  - / for forward search, ? for reverse search
+  - n for next match, N for previous match
+  - x	delete current character
+  - nx delete n character
+  - X delete left character
+  - nX similar
+  - D/d$ delete to end of the line
+  - dd or :d	Delete current line
+
