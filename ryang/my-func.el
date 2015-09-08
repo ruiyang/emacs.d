@@ -70,6 +70,10 @@ by using nxml's indentation rules."
   (interactive)
   (find-file "~/.emacs.d/ryang/help/org.org"))
 
+(defun name ()
+  (interactive)
+  (find-file "~/Dropbox/personal/org/name.org"))
+
 (defun todo ()
   (interactive)
   (find-file "~/Dropbox/Personal/org/todo.org"))
