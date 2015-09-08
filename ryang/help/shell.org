@@ -139,3 +139,6 @@ mysql> GRANT USAGE ON *.* TO 'dummy'@'localhost';
 
 ** create database
 create database <db>
+* curl
+  - -XPOST use post
+  - -i show response header
