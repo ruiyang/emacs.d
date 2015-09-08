@@ -12,7 +12,7 @@
 ;; (require 'solarized-theme)
 ;; (load-theme 'solarized-dark t)
 
-(set-face-attribute 'default nil :height 180)
+(set-face-attribute 'default nil :height 200)
 (color-theme-sanityinc-solarized-dark)
 
 (require 'my-func)
