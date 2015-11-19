@@ -36,10 +36,18 @@
 (setenv "TMPDIR" "/tmp")
 (put 'erase-buffer 'disabled nil)
 
-(defadvice dired-create-directory (around inhibit-ido activate)
-  "Turn off Ido mode for the duration, then turn it on."
-  (unwind-protect
-       (progn (ido-everywhere -1) ad-do-it)
-    (ido-everywhere 1)))
+(defun mk-anti-ido-advice (func &rest args)
+  "Temporarily disable IDO and call function FUNC with arguments ARGS."
+  (interactive)
+  (let ((read-file-name-function #'read-file-name-default))
+    (if (called-interactively-p 'any)
+        (call-interactively func)
+      (apply func args))))
+
+(defun mk-disable-ido (command)
+  "Disable IDO when command COMMAND is called."
+  (advice-add command :around #'mk-anti-ido-advice))
+
+(mk-disable-ido 'dired-create-directory)
 
 (provide 'ryang-init)
