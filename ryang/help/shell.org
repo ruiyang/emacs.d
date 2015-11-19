@@ -6,8 +6,8 @@ list all users/check home directory
 * uname -a
 check ubuntu version
 
-* df -h # check disk usage
-* check disk usage under a folder
+* disk
+  - df -h # check system disk usage
   - du -sh /home/  # check usage under /home
   - du -sh .[!.]* *  show disk usage under current folder with showing hidden folder and files
 * lsof -w -n -i tcp:8080  # find process using a port
@@ -72,7 +72,6 @@ gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
      sed -i 8d ~/.ssh/known_hosts
 
 
-
 * packages
   - dpkg --get-selections | grep -v deinstall
   - sudo dpkg --configure -a  # fix issues of missing file in apt-get install. normally this means the dpkg is corrupted
@@ -99,7 +98,7 @@ SELECT rolname FROM pg_roles;
 
 * Date And Time
   - /etc/timezone for timezone info
-  - date to display date and time
+  - date to dislay date and time
   - dpkg-reconfigure --frontend noninteractive tzdata
 
 * dpkg-query -L libapache2-mod-jk
@@ -142,3 +141,16 @@ create database <db>
 * curl
   - -XPOST use post
   - -i show response header
+* ls
+  - -S sort by size
+* jmxterm
+  - page: http://wiki.cyclopsgroup.org/jmxterm/
+  - usage
+    * java -jar jmxterm-1.0-alpha-3-uber.jar
+    * > open localhost:51001
+    * > beans # display all beans
+    * > bean <bean name> # set current bean
+    * > set <key> <val> # set bean values
+    * > info -b <bean name> # display detail of a bean
+    * > get # get value of a bean attribute
+    * > set -b <bean> Attribute Value # set bean attribute
