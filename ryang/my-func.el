@@ -100,4 +100,9 @@ by using nxml's indentation rules."
     (align-regexp start end
         (concat "\\(\\s-*\\)" regexp) 1 1 t))
 
+(defun delete-all-blank-lines ()
+  "Remove all blank lines in the buffer."
+  (interactive)
+  (flush-lines "^$"))
+
 (provide 'my-func)
