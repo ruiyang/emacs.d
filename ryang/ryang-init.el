@@ -31,6 +31,7 @@
 (require 'init-clojure-quick-repls)
 (require 'init-syntax-subword)
 (require 'init-spell-check)
+(require 'init-projectile)
 ;; (require 'init-syntax-subword)
 (subword-mode t)
 (setenv "TMPDIR" "/tmp")
