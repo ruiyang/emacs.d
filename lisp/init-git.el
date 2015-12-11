@@ -1,6 +1,8 @@
 ;; TODO: link commits from vc-log to magit-show-commit
 ;; TODO: smerge-mode
 (require-package 'magit)
+
+(global-set-key (kbd "C-x g") 'magit-status)
 ;;(require-package 'git-blame)
 ;; (require-package 'git-commit-mode)
 ;; (require-package 'git-rebase-mode)
