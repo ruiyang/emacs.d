@@ -32,6 +32,7 @@
 (require 'init-syntax-subword)
 (require 'init-spell-check)
 (require 'init-projectile)
+(require 'init-window-number)
 ;; (require 'init-syntax-subword)
 (subword-mode t)
 (setenv "TMPDIR" "/tmp")
