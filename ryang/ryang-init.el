@@ -28,7 +28,7 @@
 (require 'init-ido-vertical)
 ;; (require 'init-mozrepl)
 (require 'init-smartparens)
-(require 'init-clojure-quick-repls)
+(require 'init-clojure)
 (require 'init-syntax-subword)
 (require 'init-spell-check)
 (require 'init-projectile)
