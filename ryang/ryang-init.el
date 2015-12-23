@@ -34,6 +34,7 @@
 (require 'init-projectile)
 (require 'init-window-number)
 (require 'init-org)
+(require 'init-yasnippet)
 ;; (require 'init-syntax-subword)
 (subword-mode t)
 (setenv "TMPDIR" "/tmp")

@@ -7,4 +7,4 @@
       '("~/.emacs.d/ryang/snippets"
         ))
 
-(yas-reload-all)
+(provide 'init-yasnippet)
