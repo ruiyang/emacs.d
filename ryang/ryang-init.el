@@ -24,7 +24,6 @@
 (require 'setup-tab)
 
 (require 'init-ggtags)
-(require 'setup-cider)
 (require 'init-ido-vertical)
 ;; (require 'init-mozrepl)
 (require 'init-smartparens)
@@ -33,7 +32,7 @@
 (require 'init-spell-check)
 (require 'init-projectile)
 (require 'init-window-number)
-(require 'init-org)
+(require 'init-org-babel)
 (require 'init-yasnippet)
 ;; (require 'init-syntax-subword)
 (subword-mode t)

@@ -154,3 +154,6 @@ create database <db>
     * > info -b <bean name> # display detail of a bean
     * > get # get value of a bean attribute
     * > set -b <bean> Attribute Value # set bean attribute
+* find
+  - recursively rename files
+  find . -name 'productcatalogapi.properties' -exec bash -c 'mv $0 ${0/productcatalogapi.properties}core-services.properties' {} \;

@@ -1,3 +1,8 @@
+(require-package 'cider)
+(require-package 'clj-refactor)
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(setq cider-auto-select-error-buffer t)
+
 (require 'clj-refactor)
 
 (defun my-clojure-mode-hook ()

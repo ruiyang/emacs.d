@@ -123,3 +123,5 @@ git am --signoff < fix_empty_poster.patch -- real apply
    - git config --global core.editor 'emacsclient'
    - export VISUAL=emacsclient
    - after finish editing, using M-x git-commit-commit
+** view commits only from one branch and ignore merge commits
+   - git log --graph --oneline --no-merges master  -100 | grep '^\*'

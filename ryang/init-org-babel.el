@@ -8,4 +8,4 @@
   (not (string= lang "clojure")))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 
-(provide 'init-org)
+(provide 'init-org-babel)
