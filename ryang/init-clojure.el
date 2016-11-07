@@ -1,7 +1,14 @@
+(require-package 'clojure-mode)
 (require-package 'cider)
 (require-package 'clj-refactor)
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-(setq cider-auto-select-error-buffer t)
+
+(after-load 'clojure-mode
+  (add-hook 'clojure-mode-hook 'sanityinc/lisp-setup)
+  (add-hook 'clojure-mode-hook 'subword-mode)
+  (add-hook 'clojure-mode-hook '#'my-clojure-mode-hook))
+
+;; Use clojure-mode for clojurescript, since clojurescript-mode
+(add-auto-mode 'clojure-mode "\\.cljs\\'")
 
 (require 'clj-refactor)
 
@@ -9,8 +16,6 @@
   (clj-refactor-mode 1)
   ;; This choice of keybinding leaves cider-macroexpand-1 unbound
   (cljr-add-keybindings-with-prefix "C-c C-m"))
-
-(add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
 
 (require 'cider)
 (setq cider-cljs-lein-repl
