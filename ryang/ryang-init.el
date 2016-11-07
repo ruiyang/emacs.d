@@ -34,6 +34,7 @@
 (require 'init-window-number)
 (require 'init-org-babel)
 (require 'init-yasnippet)
+(require 'init-grep-a-lot)
 ;; (require 'init-syntax-subword)
 (subword-mode t)
 (setenv "TMPDIR" "/tmp")
