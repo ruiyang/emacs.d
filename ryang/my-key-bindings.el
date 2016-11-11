@@ -53,4 +53,7 @@
 (global-set-key (kbd "C-S-c") 'copy-file-name-to-clipboard)
 (global-set-key (kbd "S-<SPC>") 'company-complete)
 
+;; fix mac C-M-d shortcut issue
+;; defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 70 '<dict><key>enabled</key><false/></dict>'
+
 (provide 'my-key-bindings)
